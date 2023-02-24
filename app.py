@@ -21,7 +21,7 @@ dpf = st.text_input("Enter the Diabetes Pedigree Function")
 result = 0
 if st.button("Result"):
     input = pd.DataFrame([[pregnancies,glucose,bloodpressure,skinthickness,insulin,bmi,dpf,age]],columns=['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age'])
-    result = model.predict(input)
+    result = model.predict(input)[0]
 
     if result == 0:
         st.success("You are not Diabetic")

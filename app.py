@@ -27,5 +27,5 @@ if st.button("Result"):
     if result == 0:
         p="You are not Diabetic"
     else:
-        p="You are not Diabetic"
+        p="You are Diabetic"
 st.success(p)        

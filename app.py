@@ -19,11 +19,13 @@ bmi = st.text_input("Enter the Body Mass Index")
 dpf = st.text_input("Enter the Diabetes Pedigree Function")
 
 result = 0
+p=""
 if st.button("Result"):
     input = pd.DataFrame([[pregnancies,glucose,bloodpressure,skinthickness,insulin,bmi,dpf,age]],columns=['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age'])
     result = model.predict(input)[0]
 
     if result == 0:
-        st.success("You are not Diabetic")
+        p="You are not Diabetic"
     else:
-        st.success("You are Diabetic")
+        p="You are not Diabetic"
+st.success(p)        
